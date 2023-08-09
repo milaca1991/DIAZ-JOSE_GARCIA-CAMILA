@@ -10,10 +10,6 @@ public class Main {
 
         Logger logger = Logger.getLogger(Main.class);
 
-        String create= "DROP TABLE IF EXIST ; CREATE TABLE (ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(50) NOT NULL   ";
-        String insert= "INSERT INTO";
-        String delete="SELECT FROM   WHERE ID=1";
-        String select= "SELECT*FROM ";
 
 
 
@@ -24,13 +20,13 @@ public class Main {
                 //creo la tabla
             Statement statement = connection.createStatement();
             //es lo mismo ejecutar la variable pasandola por parametro que escribiendo toda la sentencia
-            statement.execute(create);
+            statement.execute(SqlCtes.create);
 
             //inserto a la tabla
-            statement.execute(insert);
+            statement.execute(SqlCtes.insert);
 
             //hacer un select para consultar la query
-            ResultSet resultSet = statement.executeQuery(select);
+            ResultSet resultSet = statement.executeQuery(SqlCtes.select);
 
             //recorrer el resultset
 
